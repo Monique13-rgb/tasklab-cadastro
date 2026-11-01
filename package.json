@@ -1,0 +1,27 @@
+{
+  "name": "tasklab-cadastro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others --names proxy,vite \"npm:dev:proxy\" \"npm:dev:vite\"",
+    "dev:proxy": "node .\\scripts\\iniciar-proxy.mjs",
+    "dev:vite": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "concurrently --kill-others --names proxy,preview \"npm:dev:proxy\" \"npm:preview:vite\"",
+    "preview:vite": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "pinia": "^3.0.4",
+    "vue": "^3.5.0",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.0",
+    "concurrently": "^10.0.6",
+    "vite": "^7.0.0"
+  }
+}
